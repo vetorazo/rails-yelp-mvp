@@ -1,4 +1,12 @@
-<h1>Restaurants</h1>
-<% @restaurants.each do |restaurant| %>
-  <strong><%= restaurant.name %></strong><br>
-<% end %>
+<div class="container mt-4">
+  <h1 class="mb-4">Restaurants</h1>
+  <% @restaurants.each do |restaurant| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title"><%= restaurant.name %></h5>
+        <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to "Add Restaurant", "new", class: "btn btn-success mt-3" %>
+</div>
